@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kasper Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- main template Css file -->
+    <!-- <link rel="stylesheet" href="project-two.css" />
+    <link rel="stylesheet" href="main-components.css" /> -->
+
+    <!-- font Awesome Library -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- this is the main font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..
+        900&family=Cairo+Play:wght@200..1000&family=Dancing+Script:wght@400..
+        700&family=Fascinate&family=Great+Vibes&family=Jomhuria&family=My+Soul&family=Open+Sans:ital,wght@0,300..
+        800;1,300..800&family=Pacifico&family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+MX+Guides&family=Satisfy&family=Work+Sans:ital,wght@0,100..
+        900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    /*Start Main */
+    * {
+      margin: 0;
+      box-sizing: border-box;
+      text-transform: capitalize;
+      font-family: "Open Sans", sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      text-decoration: none;
+    }
+
+    /* Start Global Attribute*/
+
+    .container {
+      /* for Small device*/
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    /* Small devices  */
+    @media (min-width: 768px) {
+      .container {
+        width: 750px;
+      }
+    }
+
+    /* Medium devices */
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+      }
+    }
+
+    /* Large devices */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+      }
+    }
+
+    /* End Global Attribute*/
+
+    /* Start Global Varibles */
+    :root {
+      --website-background: rgb(29 47 70);
+      --thrid-color: #a3a6be;
+      --second-color: #2c4755;
+      --main-color: #00c7fc;
+      --line-height: 1.8;
+      --duration: 0.5s;
+      --padd: 100px;
+    }
+    /* Start Global Varibles */
+    /* Main-Components */
+    .main-heading {
+      text-align: center;
+      padding: 50px 0;
+      z-index: 2;
+      position: relative;
+    }
+    .main-heading h2 {
+      position: relative;
+      text-transform: uppercase;
+      margin-bottom: 70px;
+      font-weight: normal;
+      font-size: 40px;
+      color: white;
+    }
+    .main-heading h2::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      background-color: #444242;
+      height: 2px;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .main-heading h2::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      background-color: black;
+      height: 10px;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      border: 1px solid white;
+    }
+    .main-heading p {
+      color: var(--thrid-color);
+      margin: 0 auto 70px;
+      width: 500px;
+      max-width: 100%;
+      line-height: 2;
+    }
+    .padd {
+      padding-top: var(--padd);
+      padding-bottom: var(--padd);
+    }
+    .circles {
+      display: flex;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .circles div {
+      border: 2px solid white;
+      border-radius: 50%;
+      margin-right: 5px;
+      height: 20px;
+      width: 20px;
+      transition: var(--duration);
+      animation-name: change-back;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+    }
+    .circles div:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .circles div:nth-child(2) {
+      animation-delay: 1s;
+    }
+    .circles div:nth-child(3) {
+      animation-delay: 1.5s;
+    }
+    @keyframes change-back {
+      0% {
+        background-color: var(--main-color); /* ON (main color) */
+      }
+      50%,
+      100% {
+        background-color: #222; /* OFF (background color) */
+      }
+    }
+    /* Main-Components */
+
+    /*End Main */
+
+    /* Start Style */
+    /* Start Header */
+    header {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      z-index: 2;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      min-height: 97px;
+    }
+    header .container::after {
+      content: "";
+      position: absolute;
+      width: calc(100% - 40px);
+      height: 2px;
+      background-color: #a2a2a2;
+      bottom: 0;
+      left: 20px;
+    }
+    header .container nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex: 1;
+    }
+    header .container nav .menu div {
+      background-color: white;
+      transition: var(--duration);
+      position: relative;
+      width: 20px;
+      height: 3px;
+    }
+    header .container nav .menu :not(.last) {
+      margin-bottom: 5px;
+    }
+    header .container nav ul {
+      display: flex;
+      padding-left: 5px;
+    }
+    header .container nav ul li {
+      z-index: 1;
+    }
+    header .container nav ul a {
+      display: block;
+      text-decoration: none;
+      padding: 40px 15px;
+      color: white;
+      transition: var(--duration);
+      z-index: 2;
+    }
+    header .container nav ul .main,
+    header .container nav ul a:hover {
+      color: var(--main-color);
+      border-bottom: 3px solid #00c7fc;
+    }
+    header .form {
+      width: 40px;
+      height: 30px;
+      border-left: 1px solid #a2a2a2;
+      margin-left: 40px;
+      position: relative;
+    }
+    header .form i {
+      position: absolute;
+      color: white;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 768px) {
+      header nav .menu {
+        display: none;
+      }
+    }
+    @media (max-width: 768px) {
+      header .container nav ul {
+        display: none;
+      }
+      header .container nav .menu:hover {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px;
+        width: 10px;
+      }
+      header .container nav .menu:hover div {
+        background-color: var(--main-color);
+        margin-right: 5px;
+        margin-bottom: 0;
+        width: 3px;
+        height: 100%;
+      }
+      header .container nav .menu:hover div:nth-of-type(2) {
+        display: none;
+      }
+      header .container nav .menu:hover + ul {
+        background-color: rgb(0 0 0 / 50%);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        top: 100%;
+        left: 0;
+      }
+      a {
+        padding: 15px !important;
+      }
+    }
+    /* End Header */
+
+    /* Start Landing */
+    .landing {
+      min-height: 100vh;
+      background-color: #333;
+      background-image: url("/Photo/landing\ \(1\).jpg");
+      background-size: cover;
+      position: relative;
+    }
+    .landing .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0 0 0 / 50%);
+    }
+    .landing .text {
+      position: absolute;
+      display: flex;
+      justify-content: flex-end;
+      background-color: rgb(15 116 143 / 70%);
+      color: white;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 55%;
+      padding: 50px;
+    }
+    .landing .text .landing-content {
+      max-width: 500px;
+    }
+    .landing .text .landing-content h2 {
+      font-weight: normal;
+      font-size: 30px;
+      letter-spacing: 1px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .landing .text .landing-content p {
+      font-weight: normal;
+      font-size: 13px;
+      letter-spacing: 1.6;
+      line-height: 20px;
+    }
+    .landing .change-background {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ddd;
+    }
+    .landing .fa-angle-right {
+      right: 30px;
+    }
+    .landing .fa-angle-left {
+      left: 30px;
+    }
+    @media (max-width: 768px) {
+      .landing .text {
+        width: 100%;
+      }
+      .landing .text .landing-content {
+        max-width: 100%;
+      }
+      .landing .change-background {
+        font-size: 20px;
+        top: 52%;
+      }
+      .landing .fa-angle-right {
+        right: 4px;
+      }
+      .landing .fa-angle-left {
+        left: 2px;
+      }
+    }
+    /* End Landing */
+
+    /* Start Services */
+    .service {
+      background-color: var(--website-background);
+      position: relative;
+      z-index: 2;
+    }
+    /* .service::after{
+    content: '';position: absolute;
+    width: 100%;height: 100%;
+    left: 0;top: 0;
+    background-color: rgb(0 0 0 / 50%);
+} */
+    @media (min-width: 768px) {
+      .service .service-content {
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        grid-gap: 40px 60px;
+      }
+    }
+    .service .service-content .component {
+      display: flex;
+      padding: 20px;
+      transition: var(--duration);
+      z-index: 2;
+    }
+    .service .service-content .component:hover {
+      box-shadow: -1px -1px 15px 0px white, 1px 1px 8px white;
+    }
+    .service .service-content .component i {
+      margin-right: 50px;
+      color: white;
+    }
+    .service .service-content .component h3 {
+      color: var(--main-color);
+      margin-bottom: 30px;
+    }
+    .service .service-content .component p {
+      color: var(--thrid-color);
+      line-height: 2;
+      max-width: 100%;
+    }
+    @media (max-width: 767px) {
+      .service .service-content .component {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 50px;
+      }
+      .service .service-content .component i {
+        width: 100%;
+        margin: 0 auto 30px;
+      }
+    }
+    /* End Services */
+
+    /* Start design  */
+    .design {
+      background-image: url("/Photo/design-features.jpg");
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 600px;
+      overflow: hidden;
+    }
+    @media (max-width: 767px) {
+      .design {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .design .image {
+        height: 300px;
+      }
+    }
+    .design::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgb(0 0 0 / 50%);
+    }
+    .design .design-content,
+    .design .image {
+      position: relative;
+      color: white;
+      z-index: 2;
+      flex: 1;
+    }
+    .design .image {
+      text-align: center;
+    }
+    .design .image img {
+      max-height: 100%;
+      position: relative;
+      top: 125px;
+    }
+    .design .design-content {
+      background-color: rgb(15 116 143 / 70%);
+      padding: 50px;
+    }
+    .design .design-content h2 {
+      font-weight: normal;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    .design .design-content ul li {
+      padding: 10px;
+      position: relative;
+    }
+    .design .design-content ul li::before {
+      font-family: "font awesome 5 free";
+      content: "\f108";
+      font-weight: 900;
+      margin-right: 10px;
+    }
+    /* End design  */
+
+    /* Start Portfolio  */
+    .portfolio {
+      background-color: var(--website-background);
+      position: relative;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+    .portfolio .container {
+      z-index: 3;
+    }
+    .portfolio ul {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    .portfolio ul li {
+      padding: 20px;
+      transition: var(--duration);
+      text-align: center;
+      margin-right: 2px;
+    }
+    .portfolio ul li:first-child {
+      background-color: var(--main-color);
+    }
+    .portfolio ul li:hover {
+      background-color: var(--main-color);
+    }
+    .portfolio .des-store {
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 3px 5px;
+    }
+    @media (max-width: 767px) {
+      .portfolio .des-store {
+        grid-template-columns: 1fr;
+        grid-gap: 3px 5px;
+      }
+    }
+    @media (min-width: 3500px) {
+      .portfolio .des-store {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+    .portfolio .des-store .des-img {
+      z-index: 2;
+      overflow: hidden;
+      position: relative;
+    }
+    .portfolio .des-store .des-img img {
+      max-width: 100%;
+      transition: var(--duration);
+    }
+    .portfolio .des-store .des-img:hover img {
+      transform: rotate(3deg) scale(1.3);
+    }
+    .portfolio .des-store .des-img:hover .coption {
+      bottom: 0;
+    }
+    .portfolio .des-store .des-img .coption {
+      transition: var(--duration);
+      background-color: white;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -100%;
+      text-align: start;
+      padding: 10px;
+    }
+    .portfolio .des-store .des-img .coption h3 {
+      color: black;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+    .portfolio .des-store .des-img .coption p {
+      color: var(--main-color);
+    }
+    .more {
+      background-color: var(--main-color);
+      text-transform: uppercase;
+      text-decoration: none;
+      width: fit-content;
+      padding: 20px 10px;
+      position: relative;
+      margin: 30px auto;
+      color: white;
+      display: block;
+      z-index: 2;
+      transition: var(--duration);
+    }
+    .more:hover {
+      background-color: #061a38;
+    }
+    /* End Portfolio  */
+
+    /* Start Awesome video */
+    .awesome {
+      position: relative;
+    }
+    .awesome::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgb(0 0 0 / 50%);
+    }
+    .awesome video {
+      width: 100%;
+    }
+    .awesome .awesome-all {
+      position: absolute;
+      padding: 40px 0;
+      background-color: rgb(15 116 143 / 70%);
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+    .awesome .awesome-all .text h2 {
+      margin: 0 0 30px;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+    .awesome .awesome-all .text p {
+      margin-bottom: 30px;
+    }
+    .awesome .awesome-all button {
+      padding: 10px;
+      color: var(--main-color);
+      font-size: 20px;
+    }
+    /* End Awesome video */
+
+    /* Start About Section */
+    .about {
+      padding-top: 100px;
+      background-color: var(--website-background);
+      text-align: center;
+      overflow: hidden;
+    }
+    .about img {
+      position: relative;
+      bottom: -100px;
+      margin-top: -100px;
+      max-width: 100%;
+    }
+    @media (max-width: 767px) {
+      .about img {
+        position: relative;
+        bottom: -50px;
+        margin-top: -50px;
+      }
+    }
+    /* End About Section */
+
+    /* Start Stats Section  */
+    .stats {
+      background-image: url("/Photo/339c762c2f72885d2e5ab7c6be772ec9.jpg");
+      background-size: cover;
+      position: relative;
+    }
+    .stats::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgb(0 0 0 / 30%);
+    }
+    .stats .stats-box {
+      background-color: #18597a;
+      position: relative;
+      z-index: 2;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .stats .stats-box .box {
+      padding: 40px;
+      text-align: center;
+    }
+    .stats .stats-box i {
+      background-color: black;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      font-weight: 900;
+    }
+    .stats .stats-box .box div {
+      margin: 20px 0;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    @media (max-width: 767px) {
+      .stats .stats-box .box {
+        flex-basis: 100%;
+      }
+    }
+    @media (min-width: 768px) {
+      .stats .stats-box .box {
+        flex-basis: 50%;
+      }
+    }
+    @media (min-width: 992px) {
+      .stats .stats-box .box {
+        flex-basis: 25%;
+      }
+    }
+    /* End Stats Section  */
+
+    /* Start Skills Section */
+    .skill {
+      background-color: var(--website-background);
+      line-height: 1.8;
+      color: white;
+      text-align: center;
+    }
+    @media (min-width: 993px) {
+      .skill .container {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .skill .container > div {
+        flex-basis: 45%;
+      }
+      .skill .container .skill-cirecles {
+        position: absolute;
+        left: 50%;
+        bottom: -100px;
+        transform: translateX(-50%);
+      }
+    }
+    .skill .container > div {
+      margin-bottom: 90px;
+    }
+    .skill .container > div > h2 {
+      font-weight: normal;
+      font-family: cursive;
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+    .skill .container > div > p {
+      color: var(--thrid-color);
+      margin: 0 auto 70px;
+      width: 400px;
+      max-width: 100%;
+      line-height: 2;
+      margin-bottom: 70px;
+    }
+
+    /* Start Testimonials */
+    .skill .container > div .box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .skill .container > div .box > img {
+      width: 100px;
+      border-radius: 50%;
+      margin-right: 50px;
+    }
+    .skill .container > div .box > div {
+      flex: 1;
+      text-align: start;
+      border-bottom: 2px solid #c4c4c4;
+    }
+    .skill .container > div .box > div p {
+      color: #c4c4c4;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .skill .container .skill-cirecles ul {
+      display: flex;
+      justify-content: center;
+    }
+    .skill .container .skill-cirecles ul li {
+      border: 2px solid white;
+      border-radius: 50%;
+      margin-right: 5px;
+      height: 20px;
+      width: 20px;
+      transition: var(--duration);
+      animation-name: change-back;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+    }
+    .skill-cirecles ul li:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .skill-cirecles ul li:nth-child(2) {
+      animation-delay: 1s;
+    }
+    .skill-cirecles ul li:nth-child(3) {
+      animation-delay: 1.5s;
+    }
+    /* End Testimonials */
+
+    /*Start skis  */
+    .skis .progress-section {
+      margin-bottom: 50px;
+    }
+    .skis .progress-section h4 {
+      margin-bottom: 30px;
+    }
+    .skis .progress-section .pro {
+      background-color: var(--thrid-color);
+      height: 30px;
+    }
+    .skis .progress-section .pro div {
+      background-color: var(--main-color);
+      height: 100%;
+      position: relative;
+    }
+    .skis .progress-section .pro div::after {
+      content: attr(data-progress);
+      position: absolute;
+      top: -67px;
+      right: -19px;
+      width: 42px;
+      height: 24px;
+      text-align: revert-layer;
+      padding: 9px 1px;
+      border-radius: 10px;
+      background-color: #1d2f46;
+      color: #00c7fc;
+      border: 1px solid;
+    }
+    .skis .progress-section .pro div::before {
+      content: "";
+      position: absolute;
+      top: -27px;
+      right: -7px;
+      border: 10px solid;
+      border-color: var(--main-color) transparent transparent transparent;
+    }
+    /*End skis  */
+    /*End Skills Section */
+
+    /* Start Quote */
+    .quote {
+      background-image: url("/Photo/quote.jpg");
+      background-size: cover;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .quote::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgb(0 0 0 / 70%);
+    }
+    .quote .container {
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 767px) {
+      .quote {
+        height: 300px;
+      }
+      .quote .container p {
+        font-weight: normal;
+        padding: 20px;
+        margin-bottom: 30px;
+        font-family: cursive;
+      }
+      .quote .container h4 {
+        position: absolute;
+        right: 5px;
+        font-size: 20px;
+        font-weight: 900;
+      }
+    }
+    @media (min-width: 768px) {
+      .quote {
+        height: 300px;
+      }
+      .quote .container p {
+        font-weight: normal;
+        padding: 20px;
+        margin-bottom: 30px;
+        font-family: cursive;
+        font-size: 30px;
+      }
+      .quote .container h4 {
+        position: absolute;
+        right: 154px;
+        font-size: 22px;
+        font-weight: 900;
+      }
+    }
+    /* End Quote */
+
+    /* Start Pricing */
+    .pricing {
+      background-color: var(--website-background);
+    }
+    .pricing .pricing-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+      text-align: center;
+      color: white;
+    }
+    .pricing-box .plan {
+      border-top: 1px solid white;
+      background-color: rgb(40 57 78);
+    }
+    /* Price */
+    .pricing-box .plan .price {
+      margin: 20px 0;
+    }
+    .pricing-box .price h4 {
+      font-weight: normal;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      color: var(--main-color);
+    }
+    .pricing-box .plan .price div {
+      position: relative;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    .pricing-box div:first-child div:first-child div::before {
+      left: 37%;
+    }
+    .pricing-box div:first-child div:first-child div::after {
+      right: 28%;
+    }
+    .pricing-box .plan .price div::before {
+      content: "$";
+      position: absolute;
+      font-size: 20px;
+      top: -0px;
+      margin-right: 15px;
+      left: 33%;
+      font-weight: normal;
+    }
+    .pricing-box .plan .price div::after {
+      content: "/Mo";
+      position: absolute;
+      font-size: 18px;
+      right: 24%;
+      bottom: 0px;
+      font-weight: normal;
+    }
+    /* Price */
+
+    /* Features */
+    .plan .features {
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      padding: 5px;
+    }
+    .plan .features p {
+      position: relative;
+      color: white;
+      margin: 40px 0;
+      font-size: 17px;
+    }
+    .plan .features p::before {
+      font-family: "Font Awesome 7 Free"; /* required */
+      font-weight: 900; /* solid icons */
+      content: "\f085"; /* unicode for fa-gears */
+      position: absolute;
+      left: 2px;
+      top: 0;
+    }
+    /* .plan .features p::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 1px;
+    top: 29px;
+    left: 50px;
+    background-color: white;
+} */
+    .plan .features h4 {
+      margin: 20px 0;
+    }
+    .plan button {
+      border: 1px solid var(--main-color);
+      background-color: var(--main-color);
+      padding: 10px 5px;
+      color: white;
+      margin: 30px;
+      width: 70px;
+    }
+
+    /* Features */
+    .pricing .container {
+      position: relative;
+    }
+    .pricing .container > p {
+      font-size: 1.2rem;
+      text-align: center;
+      color: white;
+      margin: 40px 0 26px;
+    }
+    .pricing .container a {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-decoration: none;
+      color: white;
+      /* border: 1px solid var(--main-color); */
+      padding: 15px 20px;
+      background-color: var(--main-color);
+    }
+    @media (max-width: 767px) {
+      .pricing-box .plan {
+        margin-bottom: 30px;
+      }
+      .pricing-box .plan .price div::after {
+        right: 29%;
+      }
+      .pricing-box .plan .price div::before {
+        left: 35%;
+        top: -3px;
+      }
+      .plan .features p::before {
+        left: 15px;
+      }
+      .pricing-box div:first-child div:first-child div::before {
+        left: 40%;
+      }
+      .pricing-box div:first-child div:first-child div::after {
+        right: 33%;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+      .pricing-box .plan {
+        margin-bottom: 30px;
+      }
+      .pricing-box .plan .price div::after {
+        right: 100px;
+      }
+      .pricing-box .plan .price div::before {
+        left: 120px;
+        top: -3px;
+      }
+      .plan .features p::before {
+        left: 15px;
+      }
+      .pricing-box div:first-child div:first-child div::before {
+        left: 135px;
+      }
+      .pricing-box div:first-child div:first-child div::after {
+        right: 105px;
+      }
+    }
+    /* End Pricing */
+
+    /* Start Subscribe  */
+    .subscribe {
+      background-image: url("/Photo/subscribe.jpg");
+      background-size: cover;
+      position: relative;
+      height: 300px;
+    }
+    .subscribe::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgb(0 0 0 / 70%);
+    }
+    .subscribe .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+    .subscribe .container form {
+      position: relative;
+      display: flex;
+      width: 40%;
+    }
+    .subscribe .container form i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+    }
+    .subscribe .container form input {
+      padding: 20px;
+      border: 1px solid white;
+      outline: none;
+    }
+    .subscribe .container form input::placeholder {
+      color: white;
+      font-size: 15px;
+      padding-left: 30px;
+    }
+    .subscribe .container form .mail {
+      background-color: transparent;
+      border-right: none;
+      flex: 1;
+    }
+    .subscribe .container form .sub {
+      background-color: var(--main-color);
+      border-left: none;
+      margin-left: -5px;
+    }
+    .subscribe .container form + p {
+      font-size: 18px;
+      line-height: 2;
+      text-align: start;
+      width: 55%;
+    }
+    @media (max-width: 767px) {
+      .subscribe {
+        height: 500px;
+      }
+      .subscribe .container {
+        display: flex;
+        flex-direction: column;
+      }
+      .subscribe .container form {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+      .subscribe .container form + p {
+        width: 100%;
+      }
+    }
+    /* End Subscribe  */
+
+    /* Start Contact us */
+    .contact {
+      background-color: var(--website-background);
+    }
+    .contact .contact-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    .contact form {
+      flex-basis: 70%;
+    }
+    .contact form .main-properties {
+      border: 1px solid var(--thrid-color);
+      caret-color: var(--main-color);
+      background-color: transparent;
+      margin-bottom: 20px;
+      display: block;
+      padding: 20px;
+      width: 100%;
+    }
+    .contact form .main-properties:focus {
+      outline: none;
+    }
+    .contact form input[type="submit"] {
+      border: 1px solid var(--thrid-color);
+      background-color: transparent;
+      caret-color: var(--main-color);
+      color: var(--main-color);
+      margin-left: auto;
+      cursor: pointer;
+      padding: 20px;
+      display: flex;
+    }
+    .contact form textarea {
+      min-height: 200px;
+      min-width: 100%;
+    }
+    .contact form ::placeholder {
+      text-transform: capitalize;
+      color: #ccc;
+      padding-left: 5px;
+    }
+    /* info */
+    .contact .info {
+      flex-basis: 25%;
+    }
+    .contact .info h3 {
+      text-transform: uppercase;
+      color: var(--main-color);
+      margin-bottom: 20px;
+    }
+    .contact .info p {
+      color: white;
+      margin-bottom: 20px;
+    }
+    .contact .info address {
+      color: white;
+      line-height: 1.8;
+    }
+    @media (max-width: 767px) {
+      .contact .contact-box {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .contact .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 60px;
+        margin-top: -10px;
+      }
+      .contact .info div {
+        flex-basis: 49%;
+        padding-left: 5px;
+      }
+    }
+    /* End Contact us */
+
+    /* Start Footer */
+    .footer {
+      padding: calc(var(--padd) / 2) 0;
+      background-image: url("/Photo/subscribe.jpg");
+      background-size: cover;
+      position: relative;
+    }
+    .footer::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgb(0 0 0 / 60%);
+    }
+    .footer .container {
+      position: relative;
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+    .footer img {
+      margin-bottom: 50px;
+    }
+    .footer img + p {
+      position: relative;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+    .footer img + p::after {
+      content: "";
+      position: absolute;
+      width: 30%;
+      bottom: -20px;
+      left: 35%;
+      height: 1px;
+      background-color: var(--main-color);
+    }
+    .footer .icons {
+      margin: 0 0 40px;
+    }
+    .footer .icons i {
+      padding: 20px;
+      width: fit-content;
+      transition: var(--duration);
+    }
+    .footer .icons i:first-child:hover {
+      color: var(--main-color);
+    }
+    .footer .icons i:nth-child(2):hover {
+      color: blue;
+    }
+    .footer .icons i:nth-child(3):hover {
+      color: red;
+    }
+    .footer .icons i:nth-child(4):hover {
+      color: var(--main-color);
+    }
+    .footer .icons i:last-child:hover {
+      color: #00c7fc;
+    }
+    .footer p:last-child span {
+      color: var(--main-color);
+      margin: 0 5px;
+    }
+
+    /* End Footer */
+
+    /* End Style */
+  </style>
+
+  <body>
+    <!-- Start Header -->
+    <header>
+      <div class="container">
+        <img src="/Photo/logo (1).png" alt="Logo" />
+        <nav>
+          <div class="menu">
+            <div></div>
+            <div></div>
+            <div class="last"></div>
+          </div>
+          <ul>
+            <li><a class="main" href="#Home">Home</a></li>
+            <li><a href="#Serive">serive</a></li>
+            <li><a href="#Portfolio">Portfolio</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Pricing">Pricing</a></li>
+            <li><a href="#Contact">Contact</a></li>
+          </ul>
+          <div class="form">
+            <i class="fas fa-search"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Landing -->
+    <div class="landing padd">
+      <div class="overlay">
+        <div class="text">
+          <div class="landing-content">
+            <h2>
+              Hello World!<br />
+              We Are Kasper We Make Art.
+            </h2>
+
+            <p>
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+              Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+              Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at
+              sem. Mauris blandit aliquet elit, eget tincidunt.
+            </p>
+          </div>
+        </div>
+        <i class="fas fa-angle-right change-background fa-2x"></i>
+        <i class="fas fa-angle-left change-background fa-2x"></i>
+        <div class="circles">
+          <div></div>
+          <div class="active"></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Landing -->
+
+    <!-- Start Service -->
+    <div class="service padd" id="Serive">
+      <div class="container">
+        <div class="main-heading">
+          <h2>services</h2>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Mauris blandit aliquet elit, eget tincidunt.
+          </p>
+        </div>
+        <div class="service-content">
+          <div class="component">
+            <i class="fas fa-desktop fa-3x" data--h-bstatus="0OBSERVED"></i>
+            <div class="service-text">
+              <h3>Vorem amet intuitive</h3>
+              <p>
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                Curabitur aliquet quam.
+              </p>
+            </div>
+          </div>
+
+          <div class="component">
+            <i class="fas fa-cog fa-3x" data--h-bstatus="0OBSERVED"></i>
+            <div class="service-text">
+              <h3>Vorem amet intuitive</h3>
+              <p>
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                Curabitur aliquet quam.
+              </p>
+            </div>
+          </div>
+
+          <div class="component">
+            <i
+              class="fas fa-pencil-ruler fa-3x"
+              data--h-bstatus="0OBSERVED"
+            ></i>
+            <div class="service-text">
+              <h3>Vorem amet intuitive</h3>
+              <p>
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                Curabitur aliquet quam.
+              </p>
+            </div>
+          </div>
+
+          <div class="component">
+            <i class="fas fa-camera fa-3x" data--h-bstatus="0OBSERVED"></i>
+            <div class="service-text">
+              <h3>Vorem amet intuitive</h3>
+              <p>
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                Curabitur aliquet quam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Service -->
+
+    <!-- Start Design -->
+    <div class="design padd">
+      <div class="image">
+        <img src="/Photo/mobile.png" alt="" />
+      </div>
+
+      <div class="design-content">
+        <h2>Our Design Comes With...</h2>
+        <ul>
+          <li>Responsive Design</li>
+          <li>Modern And Clean Design</li>
+          <li>Clean Code</li>
+          <li>Browser Friendly</li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Design -->
+
+    <!-- Start Portfolio -->
+    <div class="portfolio padd" id="Portfolio">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Portfolio</h2>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Mauris blandit aliquet elit, eget tincidunt.
+          </p>
+        </div>
+        <ul>
+          <li>All</li>
+          <li>App</li>
+          <li>Photo</li>
+          <li>Web</li>
+          <li>Print</li>
+        </ul>
+      </div>
+      <div class="des-store">
+        <div class="des-img">
+          <img src="/Photo/shuffle-08.jpg" alt="" />
+          <div class="coption">
+            <h3>awesome Image</h3>
+            <p>pinterest</p>
+          </div>
+        </div>
+
+        <div class="des-img">
+          <img src="/Photo/shuffle-01.jpg" alt="" />
+          <div class="coption">
+            <h3>awesome Image</h3>
+            <p>pinterest</p>
+          </div>
+        </div>
+
+        <div class="des-img">
+          <img src="/Photo/shuffle-02.jpg" alt="" />
+          <div class="coption">
+            <h3>awesome Image</h3>
+            <p>pinterest</p>
+          </div>
+        </div>
+
+        <div class="des-img">
+          <img src="/Photo/shuffle-03.jpg" alt="" />
+          <div class="coption">
+            <h3>awesome Image</h3>
+            <p>pinterest</p>
+          </div>
+        </div>
+
+        <div class="des-img">
+          <img src="/Photo/shuffle-04.jpg" alt="" />
+          <div class="coption">
+            <h3>awesome Image</h3>
+            <p>pinterest</p>
+          </div>
+        </div>
+
+        <div class="des-img">
+          <img src="/Photo/shuffle-05.jpg" alt="" />
+          <div class="coption">
+            <h3>awesome Image</h3>
+            <p>pinterest</p>
+          </div>
+        </div>
+
+        <div class="des-img">
+          <img src="/Photo/shuffle-06.jpg" alt="" />
+          <div class="coption">
+            <h3>awesome Image</h3>
+            <p>pinterest</p>
+          </div>
+        </div>
+
+        <div class="des-img">
+          <img src="/Photo/shuffle-07.jpg" alt="" />
+          <div class="coption">
+            <h3>awesome Image</h3>
+            <p>pinterest</p>
+          </div>
+        </div>
+      </div>
+      <a href="#Portfolio" class="more">more</a>
+    </div>
+    <!-- End Portfolio -->
+
+    <!-- Start Awesome video -->
+    <div class="awesome">
+      <video autoplay loop muted>
+        <source src="/Photo/awesome-video.mp4" type="video/mp4" />
+      </video>
+      <div class="awesome-all">
+        <div class="text">
+          <h2>Super Awesome Video Here</h2>
+          <p>Its All You Need</p>
+          <button>see more</button>
+        </div>
+      </div>
+    </div>
+    <!-- End Awesome video -->
+
+    <!-- Start About Section -->
+    <div class="about" id="About">
+      <div class="container">
+        <div class="main-heading">
+          <h2>About Us</h2>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Mauris blandit aliquet elit, eget tincidunt.
+          </p>
+        </div>
+        <img src="/Photo/about.png" alt="" />
+      </div>
+    </div>
+    <!-- End About Section -->
+
+    <!-- Start Stats Section -->
+    <div class="stats padd">
+      <div class="container">
+        <div class="stats-box">
+          <div class="box">
+            <i class="fas fa-mug-hot" data--h-bstatus="0OBSERVED"></i>
+            <div class="num">1,243</div>
+            <p>Coffee Drinks</p>
+          </div>
+
+          <div class="box">
+            <i class="far fa-folder" data--h-bstatus="0OBSERVED"></i>
+            <div class="num">323</div>
+            <p>Completed Projects</p>
+          </div>
+
+          <div class="box">
+            <i class="far fa-envelope" data--h-bstatus="0OBSERVED"></i>
+            <div class="num">1,743</div>
+            <p>Mail Sent</p>
+          </div>
+
+          <div class="box">
+            <i class="fas fa-trophy" data--h-bstatus="0OBSERVED"></i>
+            <div class="num">22</div>
+            <p>Awards Received</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Stats Section -->
+
+    <!-- Start Skills Section -->
+    <div class="skill padd">
+      <div class="container">
+        <div class="Testimonials">
+          <h2>Testimonials</h2>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Mauris blandit aliquet elit, eget tincidunt.
+          </p>
+
+          <div class="box">
+            <img src="/Photo/skills-01.jpg" alt="" />
+            <div class="info">
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+              Mauris blandit aliquet elit, eget tincidunt.
+
+              <p>John Doe, CEO</p>
+            </div>
+          </div>
+
+          <div class="box">
+            <img src="/Photo/skills-02.jpg" alt="" />
+
+            <div class="info">
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+              Mauris blandit aliquet elit, eget tincidunt.
+              <p>John Doe, CEO</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="skis">
+          <h2>Skills</h2>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Mauris blandit aliquet elit, eget tincidunt.
+          </p>
+          <div class="progress-section">
+            <h4>Adobe &amp; Word</h4>
+            <div class="pro">
+              <div style="width: 90%" data-progress="90%"></div>
+            </div>
+          </div>
+
+          <div class="progress-section">
+            <h4>Html &amp; Css</h4>
+            <div class="pro">
+              <div style="width: 100%" data-progress="100%"></div>
+            </div>
+          </div>
+
+          <div class="progress-section">
+            <h4>C++</h4>
+            <div class="pro">
+              <div style="width: 20%" data-progress="20%"></div>
+            </div>
+          </div>
+
+          <div class="progress-section">
+            <h4>Python &amp; Java</h4>
+            <div class="pro">
+              <div style="width: 10%" data-progress="10%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-cirecles">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Skills Section -->
+
+    <!-- Start Quote -->
+    <div class="quote padd">
+      <div class="container">
+        <p>
+          "accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
+          elit, eget tincidunt."
+        </p>
+        <h4>( John Doe )</h4>
+      </div>
+    </div>
+    <!-- End Quote -->
+
+    <!-- Start Pricing -->
+    <div class="pricing padd" id="Pricing">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Pricing</h2>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Mauris blandit aliquet elit, eget tincidunt.
+          </p>
+        </div>
+        <div class="pricing-box">
+          <div class="plan">
+            <div class="price">
+              <h4>Basic</h4>
+              <div>9</div>
+            </div>
+
+            <div class="features">
+              <p>Feature Num 1</p>
+              <p>Extra Feature Num 1</p>
+              <p>Feature Num 2</p>
+              <p>Extra Feature Num 2</p>
+              <h4>Features</h4>
+            </div>
+            <button>Buy Now</button>
+          </div>
+
+          <div class="plan">
+            <div class="price">
+              <h4>Premium</h4>
+              <div>21</div>
+            </div>
+
+            <div class="features">
+              <p>Feature Num 1</p>
+              <p>Extra Feature Num 1</p>
+              <p>Feature Num 2</p>
+              <p>Extra Feature Num 2</p>
+              <h4>Features</h4>
+            </div>
+            <button>Buy Now</button>
+          </div>
+
+          <div class="plan">
+            <div class="price">
+              <h4>Pro</h4>
+              <div>22</div>
+            </div>
+
+            <div class="features">
+              <p>Feature Num 1</p>
+              <p>Extra Feature Num 1</p>
+              <p>Feature Num 2</p>
+              <p>Extra Feature Num 2</p>
+              <h4>Features</h4>
+            </div>
+            <button>Buy Now</button>
+          </div>
+
+          <div class="plan">
+            <div class="price">
+              <h4>Platinum</h4>
+              <div>32</div>
+            </div>
+
+            <div class="features">
+              <p>Feature Num 1</p>
+              <p>Extra Feature Num 1</p>
+              <p>Feature Num 2</p>
+              <p>Extra Feature Num 2</p>
+              <h4>Features</h4>
+            </div>
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <p>Contact us if you have special request</p>
+        <a href="#Contact" class="contact">Contact Us</a>
+      </div>
+    </div>
+    <!-- End Pricing -->
+
+    <!-- Start Subscribe -->
+    <div class="subscribe padd">
+      <div class="container">
+        <form action="">
+          <i class="far fa-envelope fa-lg"></i>
+          <input type="email" class="mail" placeholder="Your Email" />
+          <input type="submit" class="sub" value="Subscribe" />
+        </form>
+
+        <p>
+          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+          Mauris blan dit aliquet elit, eget tincidunt.
+        </p>
+      </div>
+    </div>
+    <!-- End Subscribe -->
+
+    <!-- Start Contact us  -->
+    <div class="contact padd" id="Contact">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Contact Us</h2>
+          <p>
+            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Mauris blandit aliquet elit, eget tincidunt.
+          </p>
+        </div>
+        <div class="contact-box">
+          <form action="">
+            <input
+              type="text"
+              class="main-properties"
+              placeholder="your name"
+            />
+            <input
+              type="email"
+              class="main-properties"
+              placeholder="your email"
+            />
+            <textarea
+              class="main-properties"
+              placeholder="your review"
+            ></textarea>
+            <input type="submit" value="Send message" />
+          </form>
+
+          <div class="info">
+            <div class="phone-info">
+              <h3>Get In Touch</h3>
+              <p>+201116184471</p>
+              <p>+201567496789</p>
+            </div>
+
+            <div class="location-info">
+              <h3>Where We Are</h3>
+              <address>
+                Awesome Address 17 <br />
+                New York, NYC <br />
+                123-4567-890 <br />
+                USA
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Contact us  -->
+
+    <!-- Start Footer  -->
+    <div class="footer">
+      <div class="container">
+        <img src="/Photo/logo (1).png" alt="" />
+        <p>We Are Social</p>
+        <div class="icons">
+          <i class="fas fa-home" data--h-bstatus="0OBSERVED"></i>
+          <i class="fab fa-facebook-f" data--h-bstatus="0OBSERVED"></i>
+          <i class="fab fa-youtube" data--h-bstatus="0OBSERVED"></i>
+          <i class="fab fa-twitter" data--h-bstatus="0OBSERVED"></i>
+          <i class="fab fa-linkedin" data--h-bstatus="0OBSERVED"></i>
+        </div>
+        <p>© 2025 <span> Kasper </span> All Right Reserved</p>
+      </div>
+    </div>
+    <!-- End Footer  -->
+  </body>
+</html>
